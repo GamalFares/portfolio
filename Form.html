@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weight Converter</title>
+    <link rel="stylesheet" href="forms.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Weight Converter</h1>
+        <div class="form">
+            <label for="weight">Enter Weight:</label>
+            <input type="number" id="weight" placeholder="Enter weight...">
+            <br>
+            <input type="radio" id="kgToPounds" name="conversion" value="kgToPounds" checked>
+            <label for="kgToPounds">Kilograms to Pounds</label>
+            <br>
+            <input type="radio" id="poundsToKg" name="conversion" value="poundsToKg">
+            <label for="poundsToKg">Pounds to Kilograms</label>
+            <br>
+            <button id="calculateBtn">Calculate</button>
+            <button id="resetBtn">Reset</button>
+        </div>
+        <div class="result" id="result">
+           
+        </div>
+    </div>
+    <script >
+        
+const weightInput = document.getElementById('weight');
+const kgToPoundsRadio = document.getElementById('kgToPounds');
+const poundsToKgRadio = document.getElementById('poundsToKg');
+const calculateBtn = document.getElementById('calculateBtn');
+const resetBtn = document.getElementById('resetBtn');
+const resultDisplay = document.getElementById('result');
+
+
+function convertWeight(weight, direction) {
+    if (direction === 'kgToPounds') {
+        return weight * 2.20462; 
+    } else {
+        return weight * 0.453592; 
+    }
+}
+
+
+function displayResult(result) {
+    resultDisplay.innerHTML = `Result: ${result}`;
+}
+
+
+calculateBtn.addEventListener('click', function() {
+    const weight = parseFloat(weightInput.value);
+    const conversionDirection = kgToPoundsRadio.checked ? 'kgToPounds' : 'poundsToKg';
+    const result = convertWeight(weight, conversionDirection);
+    displayResult(result.toFixed(2)); 
+});
+
+resetBtn.addEventListener('click', function() {
+    weightInput.value = '';
+    resultDisplay.innerHTML = ''; 
+});
+
+    </script>
+</body>
+</html>

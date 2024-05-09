@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jukebox Sound Machine</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header class="jukebox-header">Jukebox</header>
+    <div class="container">
+        <div id="jukebox" class="sound-machine">
+            <button id="dontFearTheReaper">Sound 1</button>
+            <button id="diedInYourArms">Sound 2</button>
+            <button id="hideaway">Sound 3</button>
+            <button id="hotelCaliforna">Sound 4</button>
+            <button id="hometownGlory">Sound 5</button>
+            <button id="hurt">Sound 6</button>
+        </div>
+    </div>
+
+    <script>
+        var currentAudio = null;
+
+        function playAudio(audioSrc) {
+            if (currentAudio) {
+                currentAudio.pause();
+                currentAudio.currentTime = 0;
+            }
+            currentAudio = new Audio(audioSrc);
+            currentAudio.play();
+        }
+
+        document.getElementById('dontFearTheReaper').addEventListener('click', function() {
+            playAudio('sound1.mp3');
+        });
+
+        document.getElementById('diedInYourArms').addEventListener('click', function() {
+            playAudio('sound2.mp3');
+        });
+
+        document.getElementById('hideaway').addEventListener('click', function() {
+            playAudio('sound3.mp3');
+        });
+
+        document.getElementById('hotelCaliforna').addEventListener('click', function() {
+            playAudio('sound4.mp3');
+        });
+
+        document.getElementById('hometownGlory').addEventListener('click', function() {
+            playAudio('sound5.mp3');
+        });
+
+        document.getElementById('hurt').addEventListener('click', function() {
+            playAudio('sound6.mp3');
+        });
+    </script>
+</body>
+</html>
