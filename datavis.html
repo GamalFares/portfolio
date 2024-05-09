@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to Gamal Fares's Portfolio</h1>
+        <nav>
+          <ul>
+            <li><a href="#cartoon">Cartoon Project</a></li>
+            <li><a href="#main-page">Main Page</a></li>
+            <li><a href="#form-project">Form Project</a></li>
+            <li><a href="#data-visualization">Data Visualization</a></li>
+          </ul>
+        </nav>
+      </header>
+    <canvas id="doughnutChart" width="400" height="400"></canvas>
+    <canvas id="horizontalBarChart" width="400" height="400"></canvas>
+
+    <script>
+        const data = {
+            labels: ["Apples", "Bananas", "Oranges", "Grapes", "Peaches"],
+            datasets: [{
+                label: 'Jane',
+                data: [30, 50, 20, 25, 35],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(255, 206, 86, 0.5)',
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(153, 102, 255, 0.5)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        var ctxDoughnut = document.getElementById('doughnutChart').getContext('2d');
+        var doughnutChart = new Chart(ctxDoughnut, {
+            type: 'doughnut',
+            data: data
+        });
+
+        var ctxHorizontalBar = document.getElementById('horizontalBarChart').getContext('2d');
+        var horizontalBarChart = new Chart(ctxHorizontalBar, {
+            type: 'horizontalBar',
+            data: data,
+            options: {
+                scales: {
+                    xAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    </script>
+</body>
+<footer>
+    <p>Contact Gamal Fares via email: gamalfaresly@gmail.com</p>
+  </footer>
+</html>
