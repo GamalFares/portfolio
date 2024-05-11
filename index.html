@@ -5,33 +5,45 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio</title>
   <link rel="stylesheet" href="styles.css">
+</head>
 <body>
   <header>
     <h1>Welcome to Gamal Fares's Portfolio</h1>
     <nav>
       <ul>
-        <li><a href="#cartoon">Cartoon Project</a></li>
-        <li><a href="#main-page">Main Page</a></li>
-        <li><a href="#form-project">Form Project</a></li>
-        <li><a href="#data-visualization">Data Visualization</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="page.html">Cartoon Project</a></li>
+        <li><a href="form.html">Form Project</a></li>
+        <li><a href="datavis.html">Data Visualization</a></li>
+        <li><a href="Wick.html">Animation</a></li>
+        <li><a href="#" id="labsBtn">Labs</a></li>
       </ul>
     </nav>
   </header>
 
+  <div class="popup" id="labsPopup">
+    <ul>
+      <li><a href="labs/audiolab/AudioLab.html">Audio Lab</a></li>
+      <li><a href="labs/bootstrap.html">Bootstrap Lab</a></li>
+      <li><a href="labs/JsonFruit.html">JsonFruit Lab</a></li>
+      <li><a href="labs/resume.html">Resume Lab</a></li>
+    </ul>
+  </div>
+
   <main>
+    <section id="home">
+      <h2>Home</h2>
+      <p>Welcome to my portfolio. Explore my projects below.</p>
+    </section>
+
     <section id="cartoon">
       <h2>Cartoon Project</h2>
       <p>Click <a href="page.html">here</a> to view the cartoon project.</p>
     </section>
 
-    <section id="main-page">
-      <h2>Main Page</h2>
-      <p>Explore the main page <a href="index.html">here</a>.</p>
-    </section>
-
     <section id="form-project">
       <h2>Form Project</h2>
-      <p>Access the form project <a href="Form.html">here</a>.</p>
+      <p>Access the form project <a href="form.html">here</a>.</p>
     </section>
 
     <section id="data-visualization">
@@ -43,5 +55,20 @@
   <footer>
     <p>Contact Gamal Fares via email: gamalfaresly@gmail.com</p>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      console.log("DOM Loaded");
+      const labsBtn = document.getElementById("labsBtn");
+      const labsPopup = document.getElementById("labsPopup");
+
+      console.log(labsBtn, labsPopup); // Check if these elements are correctly selected
+
+      labsBtn.addEventListener("click", function() {
+        console.log("Button clicked");
+        labsPopup.classList.toggle("active");
+      });
+    });
+  </script>
 </body>
 </html>

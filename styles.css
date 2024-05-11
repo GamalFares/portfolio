@@ -3,48 +3,97 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
-  }
-  header {
+}
+
+header {
     background-color: #333;
     color: #fff;
     padding: 20px 0;
     text-align: center;
-  }
-  header h1 {
+}
+
+header h1 {
     margin: 0;
-  }
-  nav ul {
+}
+
+nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     text-align: center;
-  }
-  nav ul li {
+}
+
+nav ul li {
     display: inline;
+}
+
+nav ul li:not(:last-child) {
     margin-right: 20px;
-  }
-  nav ul li a {
+}
+
+nav ul li a {
     text-decoration: none;
     color: #fff;
     transition: color 0.3s ease;
-  }
-  nav ul li a:hover {
+}
+
+nav ul li a:hover {
     color: #ffc107;
-  }
-  main {
+}
+
+/* Styling for the pop-up window */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border: 2px solid #333;
+    padding: 20px;
+    z-index: 1000;
+    display: none; /* Hide initially */
+}
+
+.popup.active {
+    display: block;
+}
+
+.popup ul {
+    list-style: none;
+    padding: 0;
+}
+
+.popup ul li {
+    margin-bottom: 10px;
+}
+
+.popup ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+.popup ul li a:hover {
+    color: #ffc107;
+}
+
+main {
     padding: 20px;
     text-align: center;
-  }
-  section {
+}
+
+section {
     margin-bottom: 30px;
-  }
-  h2 {
+}
+
+h2 {
     color: #333;
-  }
-  p {
+}
+
+p {
     color: #666;
-  }
-  footer {
+}
+
+footer {
     background-color: #333;
     color: #fff;
     padding: 10px 0;
@@ -52,5 +101,4 @@ body {
     position: fixed;
     bottom: 0;
     width: 100%;
-  }
-  
+}
