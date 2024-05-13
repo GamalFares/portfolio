@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jerry's Resume</title>
+    <link rel="stylesheet" href="stylies.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
@@ -25,6 +26,32 @@
 </head>
 
 <body>
+    <header>
+
+        <h1>Welcome to Gamal Fares's Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../page.html">Cartoon Project</a></li>
+                <li><a href="../form.html">Form Project</a></li>
+                <li><a href="../datavis.html">Data Visualization</a></li>
+                <li><a href="../Wick.html">Animation</a></li>
+                <li><a href="../Wick3.html">interactive</a></li>
+                <li><a href="#" id="labsBtn">Labs</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="popup" id="labsPopup">
+        <ul>
+            <li><a href="./AudioLab.html">Audio Lab</a></li>
+            <li><a href="./bootstrap.html">Bootstrap Lab</a></li>
+            <li><a href="./JsonFruit.html">JsonFruit Lab</a></li>
+            <li><a href="./resume.html">Resume Lab</a></li>
+        </ul>
+    </div>
+    
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#">Jerry's Resume</a>
@@ -86,7 +113,19 @@
         </section>
 
     </div>
-
+    <script> document.getElementById('hurt').addEventListener('click', function() {
+        playAudio('sound6.mp3');
+      });
+      
+      document.addEventListener("DOMContentLoaded", function() {
+        const labsBtn = document.getElementById("labsBtn");
+        const labsPopup = document.getElementById("labsPopup");
+      
+        labsBtn.addEventListener("click", function() {
+            labsPopup.classList.toggle("active");
+        });
+      });
+      </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
