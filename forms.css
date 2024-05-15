@@ -1,5 +1,13 @@
 body {
-    font-family: Arial, sans-serif;
+  font-family: Arial, sans-serif;
+  background-image: url('weight.jpeg'); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {

@@ -6,6 +6,7 @@
     <title>Weight Converter</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="forms.css">
+    <link rel="manifest" href="manifest.json">
 </head>
 <body>
     <header>
@@ -17,7 +18,7 @@
             <li><a href="form.html">Form Project</a></li>
             <li><a href="datavis.html">Data Visualization</a></li>
             <li><a href="Wick.html">Animation</a></li>
-            <li><a href="Wick3.html">interactive</a></li>
+            <li><a href="Wick3.html">Interactive</a></li>
             <li><a href="#" id="labsBtn">Labs</a></li>
           </ul>
         </nav>
@@ -51,56 +52,64 @@
            
         </div>
     </div>
-    <script >
+    <script>
+        const weightInput = document.getElementById('weight');
+        const kgToPoundsRadio = document.getElementById('kgToPounds');
+        const poundsToKgRadio = document.getElementById('poundsToKg');
+        const calculateBtn = document.getElementById('calculateBtn');
+        const resetBtn = document.getElementById('resetBtn');
+        const resultDisplay = document.getElementById('result');
         
-const weightInput = document.getElementById('weight');
-const kgToPoundsRadio = document.getElementById('kgToPounds');
-const poundsToKgRadio = document.getElementById('poundsToKg');
-const calculateBtn = document.getElementById('calculateBtn');
-const resetBtn = document.getElementById('resetBtn');
-const resultDisplay = document.getElementById('result');
-
-
-function convertWeight(weight, direction) {
-    if (direction === 'kgToPounds') {
-        return weight * 2.20462; 
-    } else {
-        return weight * 0.453592; 
-    }
-}
-
-
-function displayResult(result) {
-    resultDisplay.innerHTML = `Result: ${result}`;
-}
-
-
-calculateBtn.addEventListener('click', function() {
-    const weight = parseFloat(weightInput.value);
-    const conversionDirection = kgToPoundsRadio.checked ? 'kgToPounds' : 'poundsToKg';
-    const result = convertWeight(weight, conversionDirection);
-    displayResult(result.toFixed(2)); 
-});
-
-resetBtn.addEventListener('click', function() {
-    weightInput.value = '';
-    resultDisplay.innerHTML = ''; 
-});
-document.addEventListener("DOMContentLoaded", function() {
-      console.log("DOM Loaded");
-      const labsBtn = document.getElementById("labsBtn");
-      const labsPopup = document.getElementById("labsPopup");
-
-      console.log(labsBtn, labsPopup); // Check if these elements are correctly selected
-
-      labsBtn.addEventListener("click", function() {
-        console.log("Button clicked");
-        labsPopup.classList.toggle("active");
-      });
-    });
+        function convertWeight(weight, direction) {
+            if (direction === 'kgToPounds') {
+                return weight * 2.20462; 
+            } else {
+                return weight * 0.453592; 
+            }
+        }
+        
+        function displayResult(result) {
+            resultDisplay.innerHTML = `Result: ${result}`;
+        }
+        
+        calculateBtn.addEventListener('click', function() {
+            const weight = parseFloat(weightInput.value);
+            const conversionDirection = kgToPoundsRadio.checked ? 'kgToPounds' : 'poundsToKg';
+            const result = convertWeight(weight, conversionDirection);
+            displayResult(result.toFixed(2)); 
+        });
+        
+        resetBtn.addEventListener('click', function() {
+            weightInput.value = '';
+            resultDisplay.innerHTML = ''; 
+        });
+        
+        document.addEventListener("DOMContentLoaded", function() {
+              console.log("DOM Loaded");
+              const labsBtn = document.getElementById("labsBtn");
+              const labsPopup = document.getElementById("labsPopup");
+        
+              console.log(labsBtn, labsPopup); // Check if these elements are correctly selected
+        
+              labsBtn.addEventListener("click", function() {
+                console.log("Button clicked");
+                labsPopup.classList.toggle("active");
+              });
+            });
+    </script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function() {
+                navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, function(err) {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
     </script>
 </body>
 <footer>
     <p>Contact Gamal Fares via email: gamalfaresly@gmail.com</p>
-  </footer>
+</footer>
 </html>
