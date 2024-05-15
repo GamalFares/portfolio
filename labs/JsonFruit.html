@@ -6,7 +6,6 @@
 </head>
 <body>
     <header>
-
         <h1>Welcome to Gamal Fares's Portfolio</h1>
         <nav>
             <ul>
@@ -15,7 +14,7 @@
                 <li><a href="../form.html">Form Project</a></li>
                 <li><a href="../datavis.html">Data Visualization</a></li>
                 <li><a href="../Wick.html">Animation</a></li>
-                <li><a href="../Wick3.html">interactive</a></li>
+                <li><a href="../Wick3.html">Interactive</a></li>
                 <li><a href="#" id="labsBtn">Labs</a></li>
             </ul>
         </nav>
@@ -30,47 +29,49 @@
         </ul>
     </div>
     
-    
-<canvas id="myCanvas" width="400" height="400" style="border:1px solid #000;"></canvas>
+    <canvas id="myCanvas" width="600" height="400" style="border:1px solid #000;"></canvas>
 
-<script>
-    var fruits = [
-        { name: "Apple", quantity: 20, color: "red" },
-        { name: "Orange", quantity: 10, color: "orange" },
-        { name: "Banana", quantity: 15, color: "yellow" },
-        { name: "Kiwi", quantity: 5, color: "green" },
-        { name: "Blueberry", quantity: 5, color: "blue" },
-        { name: "Grapes", quantity: 10, color: "purple" }
-    ];
+    <script>
+        var fruits = [
+            { name: "Apple", quantity: 20, color: "red" },
+            { name: "Orange", quantity: 10, color: "orange" },
+            { name: "Banana", quantity: 15, color: "yellow" },
+            { name: "Kiwi", quantity: 5, color: "green" },
+            { name: "Blueberry", quantity: 5, color: "blue" },
+            { name: "Grapes", quantity: 10, color: "purple" }
+        ];
 
-    var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
 
-    var barWidth = 30;
-    var gap = 20;
-    var x = 50;
-    var y = 50;
+        var barWidth = 30;
+        var gap = 20;
+        var startX = 100;
+        var startY = 50;
 
-    fruits.forEach(function(fruit) {
-        ctx.fillText(fruit.name, x, y - 10);
-        ctx.fillStyle = fruit.color;
-        ctx.fillRect(x, y, fruit.quantity * 10, barWidth);
-        y += barWidth + gap;
-    });
-    document.getElementById('hurt').addEventListener('click', function() {
-  playAudio('sound6.mp3');
-});
+        fruits.forEach(function(fruit, index) {
+            var x = startX + (index * (barWidth + gap));
+            var y = startY;
+            
+            ctx.fillStyle = fruit.color;
+            ctx.fillRect(x, y, barWidth, fruit.quantity * 10);
 
-document.addEventListener("DOMContentLoaded", function() {
-  const labsBtn = document.getElementById("labsBtn");
-  const labsPopup = document.getElementById("labsPopup");
+            ctx.fillStyle = "#000";
+            ctx.fillText(fruit.name, x, y - 10);
+            ctx.fillText(fruit.quantity, x + 5, y + (fruit.quantity * 10) + 15);
+        });
 
-  labsBtn.addEventListener("click", function() {
-      labsPopup.classList.toggle("active");
-  });
-});
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("DOM Loaded");
+            const labsBtn = document.getElementById("labsBtn");
+            const labsPopup = document.getElementById("labsPopup");
 
-</script>
+            labsBtn.addEventListener("click", function() {
+                console.log("Button clicked");
+                labsPopup.classList.toggle("active");
+            });
+        });
 
+    </script>
 </body>
 </html>
