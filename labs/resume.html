@@ -33,7 +33,7 @@
     
     <div class="popup" id="labsPopup">
         <ul>
-            <li><a href="./AudioLab.html">Audio Lab</a></li>
+            <li><a href="../labs/audiolab/AudioLab.html">Audio Lab</a></li>
             <li><a href="./bootstrap.html">Bootstrap Lab</a></li>
             <li><a href="./JsonFruit.html">JsonFruit Lab</a></li>
             <li><a href="./resume.html">Resume Lab</a></li>
@@ -95,16 +95,20 @@
         </section>
     </div>
 
-    <script >
+
+    <script>
 
 document.addEventListener("DOMContentLoaded", function() {
-  const labsBtn = document.getElementById("labsBtn");
-  const labsPopup = document.getElementById("labsPopup");
+    console.log("DOM Loaded");
+    const labsBtn = document.getElementById("labsBtn");
+    const labsPopup = document.getElementById("labsPopup");
 
-  labsBtn.addEventListener("click", function() {
+    console.log(labsBtn, labsPopup); 
+    labsBtn.addEventListener("click", function() {
+      console.log("Button clicked");
       labsPopup.classList.toggle("active");
+    });
   });
-});
 
     </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -61,7 +61,7 @@ nav ul li a:hover {
     color: #ffc107;
 }
 
-/* Styling for the pop-up window */
+
 .popup {
     position: fixed;
     top: 50%;
@@ -71,7 +71,7 @@ nav ul li a:hover {
     border: 2px solid #333;
     padding: 20px;
     z-index: 1000;
-    display: none; /* Hide initially */
+    display: none; 
 }
 
 .popup.active {
