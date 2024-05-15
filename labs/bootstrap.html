@@ -6,11 +6,39 @@
   <title>Bootstrap Grid Demo</title>
   <link rel="stylesheet" href="stylies.css">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+  
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+    }
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      border: 2px solid #333;
+      padding: 20px;
+      z-index: 1000;
+      display: none;
+    }
+    .popup.active {
+      display: block;
+    }
+  </style>
 </head>
 <body>
 
 <header>
-
     <h1>Welcome to Gamal Fares's Portfolio</h1>
     <nav>
         <ul>
@@ -19,7 +47,7 @@
             <li><a href="../form.html">Form Project</a></li>
             <li><a href="../datavis.html">Data Visualization</a></li>
             <li><a href="../Wick.html">Animation</a></li>
-            <li><a href="../Wick3.html">interactive</a></li>
+            <li><a href="../wick3.html">Interactive</a></li>
             <li><a href="#" id="labsBtn">Labs</a></li>
         </ul>
     </nav>
@@ -34,61 +62,62 @@
     </ul>
 </div>
 
-
-  <div class="container">
-    <div class="row">
-      <div class="col-sm">
-        <div class="bg-primary text-light p-3 mb-3">Column 1</div>
-      </div>
-      <div class="col-sm">
-        <div class="bg-secondary text-light p-3 mb-3">Column 2</div>
-      </div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <div class="bg-primary text-light p-3 mb-3">Column 1</div>
     </div>
-    <div class="row">
-      <div class="col-sm">
-        <div class="bg-primary text-light p-3 mb-3">Column 3</div>
-      </div>
-      <div class="col-sm">
-        <div class="bg-secondary text-light p-3 mb-3">Column 4</div>
-      </div>
-      <div class="col-sm">
-        <div class="bg-primary text-light p-3 mb-3">Column 5</div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm">
-        <div class="bg-secondary text-light p-3 mb-3">Column 6</div>
-      </div>
-      <div class="col-sm">
-        <div class="bg-primary text-light p-3 mb-3">Column 7</div>
-      </div>
-      <div class="col-sm">
-        <div class="bg-secondary text-light p-3 mb-3">Column 8</div>
-      </div>
-      <div class="col-sm">
-        <div class="bg-primary text-light p-3 mb-3">Column 9</div>
-      </div>
+    <div class="col-sm">
+      <div class="bg-secondary text-light p-3 mb-3">Column 2</div>
     </div>
   </div>
-  <footer>
-    <p>Contact Gamal Fares via email: gamalfaresly@gmail.com</p>
+  <div class="row">
+    <div class="col-sm">
+      <div class="bg-primary text-light p-3 mb-3">Column 3</div>
+    </div>
+    <div class="col-sm">
+      <div class="bg-secondary text-light p-3 mb-3">Column 4</div>
+    </div>
+    <div class="col-sm">
+      <div class="bg-primary text-light p-3 mb-3">Column 5</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm">
+      <div class="bg-secondary text-light p-3 mb-3">Column 6</div>
+    </div>
+    <div class="col-sm">
+      <div class="bg-primary text-light p-3 mb-3">Column 7</div>
+    </div>
+    <div class="col-sm">
+      <div class="bg-secondary text-light p-3 mb-3">Column 8</div>
+    </div>
+    <div class="col-sm">
+      <div class="bg-primary text-light p-3 mb-3">Column 9</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>Contact Gamal Fares via email: gamalfaresly@gmail.com</p>
 </footer>
+
 <script>
- document.getElementById('hurt').addEventListener('click', function() {
-  playAudio('sound6.mp3');
-});
+  document.addEventListener("DOMContentLoaded", function() {
+    console.log("DOM Loaded");
+    const labsBtn = document.getElementById("labsBtn");
+    const labsPopup = document.getElementById("labsPopup");
 
-document.addEventListener("DOMContentLoaded", function() {
-  const labsBtn = document.getElementById("labsBtn");
-  const labsPopup = document.getElementById("labsPopup");
-
-  labsBtn.addEventListener("click", function() {
+    labsBtn.addEventListener("click", function() {
+      console.log("Button clicked");
       labsPopup.classList.toggle("active");
+    });
   });
-});
 </script>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
