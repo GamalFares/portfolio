@@ -1,62 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jerry's Resume</title>
     <link rel="stylesheet" href="stylies.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-
-        .container {
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 20px;
-            margin-top: 50px;
-        }
-
-        h2 {
-            color: #007bff;
-        }
-    </style>
 </head>
-
 <body>
     <header>
-
-        <h1>Welcome to Gamal Fares's Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../page.html">Cartoon Project</a></li>
-                <li><a href="../form.html">Form Project</a></li>
-                <li><a href="../datavis.html">Data Visualization</a></li>
-                <li><a href="../Wick.html">Animation</a></li>
-                <li><a href="../Wick3.html">interactive</a></li>
-                <li><a href="#" id="labsBtn">Labs</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">Jerry's Resume</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../page.html">Cartoon Project</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../form.html">Form Project</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../datavis.html">Data Visualization</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Wick.html">Animation</a></li>
+                        <li class="nav-item"><a class="nav-link" href="../Wick3.html">Interactive</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" id="labsBtn">Labs</a></li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
     
     <div class="popup" id="labsPopup">
         <ul>
-            <li><a href="./AudioLab.html">Audio Lab</a></li>
+            <li><a href="../labs/audiolab/AudioLab.html">Audio Lab</a></li>
             <li><a href="./bootstrap.html">Bootstrap Lab</a></li>
             <li><a href="./JsonFruit.html">JsonFruit Lab</a></li>
             <li><a href="./resume.html">Resume Lab</a></li>
         </ul>
     </div>
-    
-    
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="#">Jerry's Resume</a>
-        </div>
-    </nav>
 
     <div class="container mt-5">
         <section id="summary">
@@ -111,24 +93,24 @@
                 </a>
             </div>
         </section>
-
     </div>
-    <script> document.getElementById('hurt').addEventListener('click', function() {
-        playAudio('sound6.mp3');
-      });
-      
-      document.addEventListener("DOMContentLoaded", function() {
-        const labsBtn = document.getElementById("labsBtn");
-        const labsPopup = document.getElementById("labsPopup");
-      
-        labsBtn.addEventListener("click", function() {
-            labsPopup.classList.toggle("active");
-        });
-      });
-      </script>
+
+    <script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    console.log("DOM Loaded");
+    const labsBtn = document.getElementById("labsBtn");
+    const labsPopup = document.getElementById("labsPopup");
+
+    console.log(labsBtn, labsPopup); 
+    labsBtn.addEventListener("click", function() {
+      console.log("Button clicked");
+      labsPopup.classList.toggle("active");
+    });
+  });
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>
